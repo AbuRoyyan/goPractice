@@ -244,14 +244,136 @@ Run each program and test it.
 
 ---
 
-## When you're done
+Here are the two tasks written in **Go** so you can practice.
 
-Paste your code for:
+---
 
-* Gatekeeper
-* Grade Master
-* Mini Calculator
+# 4️⃣ The Even-Odd Squad (Modulo Logic)
 
-I will review them like a **Go code reviewer** and help you improve them.
+The **modulo operator `%`** gives the remainder of a division.
 
-This is exactly how real engineers learn.
+Example:
+
+```
+10 % 2 = 0   → even
+7 % 2 = 1    → odd
+```
+
+### Go Code
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var number int
+
+	fmt.Print("Enter a number: ")
+	fmt.Scanln(&number)
+
+	if number%2 == 0 { // even
+		if number > 100 {
+			fmt.Println("Large Even Number")
+		} else {
+			fmt.Println("Small Even Number")
+		}
+	} else {
+		fmt.Println("Odd Number")
+	}
+}
+```
+
+### Example Output
+
+```
+Enter a number: 120
+Large Even Number
+```
+
+```
+Enter a number: 40
+Small Even Number
+```
+
+```
+Enter a number: 13
+Odd Number
+```
+
+---
+
+# 5️⃣ The Login Challenge
+
+This program checks **username and password**.
+
+### Go Code
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	username := "admin"
+	password := "1234"
+
+	var inputUser string
+	var inputPass string
+
+	fmt.Print("Enter username: ")
+	fmt.Scanln(&inputUser)
+
+	fmt.Print("Enter password: ")
+	fmt.Scanln(&inputPass)
+
+	if inputUser == username && inputPass == password {
+		fmt.Println("Login Successful! Welcome Boss.")
+	} else if inputUser == username && inputPass != password {
+		fmt.Println("Wrong Password.")
+	} else {
+		fmt.Println("User not found.")
+	}
+}
+```
+
+### Example Run
+
+```
+Enter username: admin
+Enter password: 1234
+Login Successful! Welcome Boss.
+```
+
+```
+Enter username: admin
+Enter password: 999
+Wrong Password.
+```
+
+```
+Enter username: john
+Enter password: 1234
+User not found.
+```
+
+---
+
+✅ Concepts you practiced:
+
+* `if / else if / else`
+* `%` modulo operator
+* `&&` (AND condition)
+* string comparison
+* user input with `fmt.Scanln`
+
+---
+
+💡 **Small challenge for you (to grow faster in Go):**
+
+Modify the login program so that:
+
+* If password is wrong **3 times**, it prints
+  `"Account Locked"`.
+
+If you'd like, I can also show you **5 beginner Go challenges that make people job-ready much faster.**
