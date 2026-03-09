@@ -375,5 +375,3 @@ Modify the login program so that:
 
 * If password is wrong **3 times**, it prints
   `"Account Locked"`.
-
-If you'd like, I can also show you **5 beginner Go challenges that make people job-ready much faster.**
