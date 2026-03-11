@@ -127,7 +127,7 @@
 
 // 				// remove hex
 // 				words = append(words[:i], words[i+1:]...)
-
+                // i--
 // 			}
 // 		}
 
@@ -136,30 +136,71 @@
 // 	fmt.Println(result)
 // }
 
-package main
+// 
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"strings"
+// 	"strconv"
+// )
+
+// func main() {
+// 	text := "It has been 10 (bin) years"
+
+// 	// spliting
+// 	words := strings.Fields(text)
+
+// 	// looping
+// 	for i := 0; i < len(words); i++ {
+
+// 		// Dectecting bin
+		
+// 		// if words[i] == "(bin)" 
+// 		if i > 0 && words[i] == "(bin)" {
+
+// 			// checking previous word
+// 			prevWord := words[i-1]
+
+// 			num, err := strconv.ParseInt(prevWord,2,64)
+
+// 			if err == nil {
+
+// 				// replacing the previous word
+// 				words[i-1] = strconv.FormatInt(num, 10)
+				
+// 				// removing (bin)
+// 				words = append(words[:i], words[i+1:]...)
+// 				i--
+// 			}
+			
+// 		}
+
+// 	}
+// 	result := strings.Join(words, " ")
+// 	fmt.Println(result)
+// }
+
+package main 
 
 import (
-	"fmt"
 	"strings"
+	"fmt"
+	"strconv"
 )
 
 func main() {
-	text := "It has been 10 (bin) years"
 
-	// spliting
+	text := "Simply add 42 (hex) and 10 (bin)"
 	words := strings.Fields(text)
 
-	// looping
 	for i := 0; i < len(words); i++ {
-
-		// Dectecting bin
-		if words[i] == "(bin)" {
-
-			// checking previous word
-			prevWord := words[i-1]
-
-			fmt.Println("Binary number", prevWord)
-		}
-
+	  if words[i] == "(hex)" && i > 0 {
+		num, err := strconv.ParseInt(words[i-1], 16, 64)
+         if err == nil {
+			words[i-1] = strconv.FormatInt(num, 10)
+		 }
+	  }
 	}
 }
