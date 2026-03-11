@@ -64,6 +64,4 @@ func main() {
 		fmt.Println("Wrong guess. Try again.")
 	}
 
-
-
 }

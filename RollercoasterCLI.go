@@ -6,7 +6,7 @@ func main() {
 	var height int
 	var age int
 	var bill int
-	var photo string 
+	var photo string
 
 	fmt.Println("Welcome to the Rollercoaster!")
 	fmt.Println("What is your height in cm? ")
@@ -27,7 +27,7 @@ func main() {
 	} else {
 		bill = 12
 	}
-	
+
 	fmt.Print("Do you want a photo taken? (y/n): ")
 	fmt.Scanln(&photo)
 

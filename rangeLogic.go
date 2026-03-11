@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	var score int
 
 	fmt.Println("Enter score: ")

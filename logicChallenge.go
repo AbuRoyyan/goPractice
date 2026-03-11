@@ -8,7 +8,7 @@ func main() {
 
 	var inputUser string
 	var inputPass string
-	
+
 	fmt.Print("Enter username: ")
 	fmt.Scanln(&inputUser)
 

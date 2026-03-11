@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 
 	// Examples
 
@@ -40,7 +40,7 @@ func main(){
 	// } else {
 	// 	fmt.Println("You failed the exam")
 	// }
-	
+
 	// Task 3 - Number Checker
 
 	var number int
@@ -53,24 +53,24 @@ func main(){
 	// 	fmt.Println("The number is zero or negative")
 	// }
 
-// 	Small Improvement (Optional) 🚀
+	// 	Small Improvement (Optional) 🚀
 
-// You can also check three cases instead of two:
+	// You can also check three cases instead of two:
 
-// Positive
+	// Positive
 
-// Zero
+	// Zero
 
-// Negative
+	// Negative
 
-// Example:
-    fmt.Println("Choose a number")
+	// Example:
+	fmt.Println("Choose a number")
 	fmt.Scanln(&number)
 	if number > 0 {
-    fmt.Println("The number is positive")
-} else if number == 0 {
-    fmt.Println("The number is zero")
-} else {
-    fmt.Println("The number is negative")
-}
+		fmt.Println("The number is positive")
+	} else if number == 0 {
+		fmt.Println("The number is zero")
+	} else {
+		fmt.Println("The number is negative")
+	}
 }

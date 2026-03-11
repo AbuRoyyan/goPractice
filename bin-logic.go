@@ -127,7 +127,7 @@
 
 // 				// remove hex
 // 				words = append(words[:i], words[i+1:]...)
-                // i--
+// i--
 // 			}
 // 		}
 
@@ -136,7 +136,7 @@
 // 	fmt.Println(result)
 // }
 
-// 
+//
 
 // package main
 
@@ -156,8 +156,8 @@
 // 	for i := 0; i < len(words); i++ {
 
 // 		// Dectecting bin
-		
-// 		// if words[i] == "(bin)" 
+
+// 		// if words[i] == "(bin)"
 // 		if i > 0 && words[i] == "(bin)" {
 
 // 			// checking previous word
@@ -169,12 +169,12 @@
 
 // 				// replacing the previous word
 // 				words[i-1] = strconv.FormatInt(num, 10)
-				
+
 // 				// removing (bin)
 // 				words = append(words[:i], words[i+1:]...)
 // 				i--
 // 			}
-			
+
 // 		}
 
 // 	}
@@ -182,11 +182,11 @@
 // 	fmt.Println(result)
 // }
 
-package main 
+ package main
 
 import (
-	"strings"
 	"fmt"
+	"strings"
 	"strconv"
 )
 
@@ -196,11 +196,25 @@ func main() {
 	words := strings.Fields(text)
 
 	for i := 0; i < len(words); i++ {
-	  if words[i] == "(hex)" && i > 0 {
-		num, err := strconv.ParseInt(words[i-1], 16, 64)
-         if err == nil {
-			words[i-1] = strconv.FormatInt(num, 10)
-		 }
-	  }
+		if words[i] == "(hex)" && i > 0 {
+			num, err := strconv.ParseInt(words[i-1], 16, 64)
+			if err == nil {
+				words[i-1] = strconv.FormatInt(num, 10)
+			}
+			words = append(words[:i], words[i+1:]...)
+			i--
+
+			// bin
+		} else if words[i] == "(bin)" && i > 0 {
+			num, err := strconv.ParseInt(words[i-1], 2, 64)
+			if err == nil {
+				words[i-1] = strconv.FormatInt(num, 10)
+			}
+			words = append(words[:i], words[i+1:]...)
+			i--
+		}
 	}
+
+	result := strings.Join(words, " ")
+	fmt.Println(result)
 }

@@ -20,7 +20,7 @@ func main() {
 		fmt.Println(num1 + num2)
 	} else if operation == "sub" {
 		fmt.Println(num1 - num2)
-	} else if operation == "mult"{
+	} else if operation == "mult" {
 		fmt.Println(num1 * num2)
 	} else {
 		fmt.Println("Unknown operation")
