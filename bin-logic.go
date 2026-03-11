@@ -184,37 +184,55 @@
 
  package main
 
-import (
+ import (
 	"fmt"
 	"strings"
 	"strconv"
-)
+ )
 
-func main() {
-
+ func main() {
 	text := "Simply add 42 (hex) and 10 (bin)"
+	
+	// spliting
 	words := strings.Fields(text)
 
+	// loop
 	for i := 0; i < len(words); i++ {
+
+		// Detect
 		if words[i] == "(hex)" && i > 0 {
+
+			// hex to dec
 			num, err := strconv.ParseInt(words[i-1], 16, 64)
-			if err == nil {
+
+			// handle error
+			if err == nil{
+
+				// replacing the previous word
 				words[i-1] = strconv.FormatInt(num, 10)
 			}
+			// remove (hex)
 			words = append(words[:i], words[i+1:]...)
 			i--
 
-			// bin
+			// (bin)
 		} else if words[i] == "(bin)" && i > 0 {
+
+			// binary to decimal
 			num, err := strconv.ParseInt(words[i-1], 2, 64)
+
+			// handle error
 			if err == nil {
 				words[i-1] = strconv.FormatInt(num, 10)
 			}
+			// remove (bin)
 			words = append(words[:i], words[i+1:]...)
-			i--
-		}
-	}
 
+			// stop slice repetition
+			i--
+
+		} 
+	}
 	result := strings.Join(words, " ")
 	fmt.Println(result)
-}
+ }
