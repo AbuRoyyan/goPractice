@@ -182,17 +182,17 @@
 // 	fmt.Println(result)
 // }
 
- package main
+package main
 
- import (
+import (
 	"fmt"
-	"strings"
 	"strconv"
- )
+	"strings"
+)
 
- func main() {
+func main() {
 	text := "Simply add 42 (hex) and 10 (bin)"
-	
+
 	// spliting
 	words := strings.Fields(text)
 
@@ -206,7 +206,7 @@
 			num, err := strconv.ParseInt(words[i-1], 16, 64)
 
 			// handle error
-			if err == nil{
+			if err == nil {
 
 				// replacing the previous word
 				words[i-1] = strconv.FormatInt(num, 10)
@@ -231,8 +231,8 @@
 			// stop slice repetition
 			i--
 
-		} 
+		}
 	}
 	result := strings.Join(words, " ")
 	fmt.Println(result)
- }
+}
